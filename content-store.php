@@ -79,7 +79,10 @@
 								</tr>
 								<tr>
 									<td> F.O.B Price</td>
-									<td> <?php $price = !empty(get_field('price')) ? "$". the_field('price') : "No price stated"; ?> <?php echo $price; ?> </td>
+									<td> 
+										<?php $price = get_field('price'); ?>
+										<?php echo $price = $price ? $price : "No Price Given"; ?>
+									 </td>
 								</tr>
 								<tr>
 									<td> Availability</td>
