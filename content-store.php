@@ -6,16 +6,6 @@
 	$item = new WP_Query($query);
 ?>
 
-<br/>
-
-<?php $page_title = get_the_title(); ?>
-<h1 class="entry-title single-title" itemprop="headline" > <?php echo $page_title; ?> </h1>
-<div class="colored-line-left"></div>
-<div class="clearfix"></div>
-<div class="clearfix"></div>
-
-<br/>
-
 <?php while($item->have_posts()):$item->the_post(); ?>
 
 	<single-ogolord-product-item>
@@ -84,11 +74,11 @@
 
 											if( $value ) {
 											    
-											    echo $value;
+											    echo "<i class='glyphicon glyphicon-usd' aria-hidden='true'></i>".$value;
 
 											} else {
 
-											    echo 'empty';
+											    echo 'No Price Given Yet';
 											    
 											} ?>
 									 </td>
