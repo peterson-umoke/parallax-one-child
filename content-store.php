@@ -1,0 +1,91 @@
+<?php
+	$query = array(
+			'post_type'	=> 'products_store',
+		);
+
+	$item = new WP_Query($query);
+?>
+
+<br/>
+
+<?php $page_title = get_the_title(); ?>
+<h1 class="entry-title single-title" itemprop="headline" > <?php echo $page_title; ?> </h1>
+<div class="colored-line-left"></div>
+<div class="clearfix"></div>
+<div class="clearfix"></div>
+
+<br/>
+
+<?php while($item->have_posts()):$item->the_post(); ?>
+
+	<single-ogolord-product-item>
+
+		<div class="col-md-4 col-lg-3 col-sm-6 col-xs-12">
+			<article itemscope itemprop="blogPosts" itemtype="http://schema.org/BlogPosting" itemtype="http://schema.org/BlogPosting" <?php post_class('border-bottom-hover blog-post-wrap'); ?> title="<?php printf( esc_html__( 'Blog post: %s', 'parallax-one' ), get_the_title() )?>">
+				<?php parallax_hook_entry_top(); ?>
+				<header class="entry-header">
+
+						<div class="post-img-wrap">
+						 	<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" >
+
+								<?php
+									if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
+								?>
+									<?php
+										$image_id = get_post_thumbnail_id();
+										$image_url_big = wp_get_attachment_image_src($image_id,'parallax-one-post-thumbnail-big', true);
+										$image_url_mobile = wp_get_attachment_image_src($image_id,'parallax-one-post-thumbnail-mobile', true);
+									?>
+							 		<picture itemscope itemprop="image">
+										<source media="(max-width: 600px)" srcset="<?php echo esc_url($image_url_mobile[0]); ?>">
+										<img src="<?php echo esc_url($image_url_big[0]); ?>" alt="<?php the_title_attribute(); ?>">
+									</picture>
+								<?php
+									} else {
+								?>
+							 		<picture itemscope itemprop="image">
+										<source media="(max-width: 600px)" srcset="<?php echo parallax_get_file('/images/no-thumbnail-mobile.jpg');?> ">
+										<img src="<?php echo parallax_get_file('/images/no-thumbnail.jpg'); ?>" alt="<?php the_title_attribute(); ?>">
+									</picture>
+								<?php } ?>
+
+							</a>
+
+							<?php
+							if( function_exists( 'cwppos_calc_overall_rating' ) ) {
+								$review_score = cwppos_calc_overall_rating( get_the_ID() );
+								if( !empty( $review_score['overall'] ) ) {
+									$review_score = $review_score['overall'];
+									if ( !empty( $review_score ) ) {
+										echo '<div class="wppr-rating-wrap">';
+										echo '<div class="wppr-rating-wrap-text">' . esc_html__( 'Rating', 'parallax-one' ) . '</div>';
+										echo '<div class="wppr-rating-wrap-score">' . ( floor( $review_score ) / 10 ) . '</div>';
+										echo '</div>';
+									}
+								}
+							}
+						?>
+
+						</div>
+
+						<div class="entry-meta list-post-entry-meta">
+							<?php the_title( sprintf( '<h4 class="entry-title" itemprop="headline"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h4>' ); ?>
+							<!-- <div class="colored-line-left"></div> -->
+							<div class="clearfix"></div>
+							Simple Entry Meta						
+						</div><!-- .entry-meta -->
+						<div class="clearfix"></div>
+
+
+				</header><!-- .entry-header -->
+
+				<?php parallax_hook_entry_bottom(); ?>
+			</article><!-- #post-## -->
+			<br/>
+		</div>
+	</single-ogolord-product-item>
+
+<?php
+endwhile;
+// wp_reset_post_meta();
+?>
