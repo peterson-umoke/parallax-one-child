@@ -86,7 +86,7 @@
 									<td> <?php echo $availability = get_field('availability')? "In Stock" : "Not Available"; ?></td>
 								</tr>
 								<tr>
-									<td colspan="2"> <a href="<?php the_permalink(); ?>" rel="<?php the_title(); ?>-product-link" title="<?php the_title_attribute(); ?>" class="btn btn-success" target="__blank"> More Details </a> </td>
+									<td colspan="2"> <a href="<?php the_permalink(); ?>" rel="<?php the_title(); ?>-product-link" title="<?php // the_title_attribute(); ?>" class="btn btn-success" target="__blank"> More Details </a> </td>
 								</tr>
 							</table>
 						</div><!-- .entry-meta -->
