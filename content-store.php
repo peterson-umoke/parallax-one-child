@@ -20,7 +20,7 @@
 
 	<single-ogolord-product-item>
 
-		<div class="col-md-4 col-lg-3 col-sm-6 col-xs-12">
+		<div class="col-md-6 col-lg-4 col-sm-6 col-xs-12">
 			<article itemscope itemprop="blogPosts" itemtype="http://schema.org/BlogPosting" itemtype="http://schema.org/BlogPosting" <?php post_class('border-bottom-hover blog-post-wrap'); ?> title="<?php printf( esc_html__( 'Blog post: %s', 'parallax-one' ), get_the_title() )?>">
 				<?php parallax_hook_entry_top(); ?>
 				<header class="entry-header">
@@ -68,11 +68,27 @@
 
 						</div>
 
-						<div class="entry-meta list-post-entry-meta">
-							<?php the_title( sprintf( '<h4 class="entry-title" itemprop="headline"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h4>' ); ?>
-							<!-- <div class="colored-line-left"></div> -->
-							<div class="clearfix"></div>
-							Simple Entry Meta						
+						<div class="entry-meta text-small list-post-entry-meta bg-info">
+						<?php
+
+						?>
+							<table class=" ">
+								<tr>
+									<td>Product</td>
+									<td> <?php the_title(); ?> </td>
+								</tr>
+								<tr>
+									<td> F.O.B Price</td>
+									<td> <?php echo $price = !empty(get_field('price')) ? "$". get_field('price') : "No price stated"; ?> </td>
+								</tr>
+								<tr>
+									<td> Availability</td>
+									<td> <?php echo $availability = get_field('availability')? "In Stock" : "Not Available"; ?></td>
+								</tr>
+								<tr>
+									<td colspan="2"> <a href="<?php the_permalink(); ?>" rel="<?php the_title(); ?>-product-link" title="<?php the_title_attribute(); ?>" class="btn btn-success" target="__blank"> More Details </a> </td>
+								</tr>
+							</table>
 						</div><!-- .entry-meta -->
 						<div class="clearfix"></div>
 
