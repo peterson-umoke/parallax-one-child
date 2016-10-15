@@ -80,8 +80,17 @@
 								<tr>
 									<td> F.O.B Price</td>
 									<td> 
-										<?php $price = get_field('price'); ?>
-										<?php echo $price = $price ? $price : "No Price Given"; ?>
+										<?php $value = get_field( "price" );
+
+											if( $value ) {
+											    
+											    echo $value;
+
+											} else {
+
+											    echo 'empty';
+											    
+											} ?>
 									 </td>
 								</tr>
 								<tr>
