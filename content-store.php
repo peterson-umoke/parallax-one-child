@@ -79,11 +79,11 @@
 								</tr>
 								<tr>
 									<td> F.O.B Price</td>
-									<td> <?php // echo $price = !empty(get_field('price')) ? "$". get_field('price') : "No price stated"; ?> </td>
+									<td> <?php $price = !empty(get_field('price')) ? "$". get_field('price') : "No price stated"; ?> <?php echo $price; ?> </td>
 								</tr>
 								<tr>
 									<td> Availability</td>
-									<td> <?php // echo $availability = get_field('availability')? "In Stock" : "Not Available"; ?></td>
+									<td> <?php $availability = get_field('availability')? "In Stock" : "Not Available"; ?> <?php echo $availability; ?></td>
 								</tr>
 								<tr>
 									<td colspan="2"> <a href="<?php the_permalink(); ?>" rel="<?php the_title(); ?>-product-link" title="<?php the_title_attribute(); ?>" class="btn btn-success" target="__blank"> More Details </a> </td>
