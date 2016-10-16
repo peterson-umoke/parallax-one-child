@@ -20,7 +20,8 @@ if(!function_exists('load_child_scripts')) {
 	function load_child_scripts() {
 
 		$styles_config['Child_theme']	= CHILD_THEME.'/style.css';
-		$scripts_config['jquery-masonry'] = "";
+		$styles_config['flexslider'] = "https://cdn.jsdelivr.net/flexslider/2.6.3/jquery.flexslider-min.js";
+		$scripts_config['flexslider'] = "https://cdn.jsdelivr.net/flexslider/2.6.3/flexslider.css";
 		$scripts_config['app']	= CHILD_THEME.'/js/app.js';
 
 		if(isset($scripts_config)){

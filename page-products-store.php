@@ -31,7 +31,8 @@
 					<div class="clearfix"></div>
 
 					<br/>
-					<?php get_template_part( 'content', 'store_homepage' ); ?>
+					<?php // get_template_part( 'content', 'store_homepage' ); ?>
+					<?php get_template_part( 'content', 'store' ); ?>
 				<?php parallax_hook_page_after();?>
 			</main><!-- #main -->
 		</div><!-- #primary -->

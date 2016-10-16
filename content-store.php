@@ -74,7 +74,7 @@
 
 											if( $value ) {
 											    
-											    echo "<i class='glyphicon glyphicon-usd' aria-hidden='true'></i>".$value;
+											    echo "$".$value;
 
 											} else {
 
@@ -88,7 +88,7 @@
 									<td> <?php $availability = get_field('availability')? "In Stock" : "Not Available"; ?> <?php echo $availability; ?> </td>
 								</tr>
 								<tr>
-									<td colspan="2"> <a href="<?php the_permalink(); ?>" rel="<?php the_title(); ?>-product-link" title="<?php the_title_attribute(); ?>" class="btn btn-success" target="__blank"> More Details </a> </td>
+									<td colspan="2"> <a href="<?php the_permalink(); ?>" rel="<?php the_title(); ?>-product-link" title="<?php the_title_attribute(); ?>" class="btn btn-success" target="_blank"> More Details </a> </td>
 								</tr>
 							</table>
 						</div><!-- .entry-meta -->

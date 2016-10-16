@@ -52,3 +52,42 @@ single-ogolord-product-item img {
 		padding-right: 0px;
 	}
 }
+
+.product-card {
+	padding:10px;
+	transtion:linear 0.5s;
+}
+
+.product-card img {
+	max-height: 140px;
+	margin:auto;
+	display: block;
+}
+
+.product-card a {
+	color: #333;
+}
+
+.product-card:hover {
+	border:4px solid #aaa;
+}
+
+.product-card:hover .btn-product{
+	display:block;
+	margin:auto;
+}
+
+.btn-product {
+	border-radius:0px;
+	/*clear: both;*/
+	/*display:none;*/
+}
+
+.product-title {
+	color: #333;
+	font-size: 16px;
+}
+
+.product-title .product-name {
+	font-size: 11px;
+}
