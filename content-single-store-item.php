@@ -55,12 +55,9 @@
 		  <ul class="slides">
 		 
 			 <?php 
-				// $gallery = array_map('intval', explode(',', $gallery));
 				$main_slider = explode(",",$gallery); // get the id of the whole inner gallery
 				$image_id = get_post_thumbnail_id();  // the id of the current post_thumnbnail
 				array_unshift($main_slider, $image_id); // add the current featured image with the array made from above
-				array_unique($main_slider); // remove dupliacate keys and values
-
 				$arrlength = count($main_slider);
 				if(has_post_thumbnail() and $arrlength > 2):
 			?>
@@ -109,14 +106,11 @@
 	  <ul class="slides">
 	 
 		 <?php 
-			// $gallery = array_map('intval', explode(',', $gallery));
 			$carousel = explode(",",$gallery); // get the id of the whole inner gallery
 			$image_id = get_post_thumbnail_id();  // the id of the current post_thumnbnail
 			array_unshift($carousel, $image_id); // add the current featured image with the array made from above
-
-			array_unique($carousel); // remove duplicate keys and values
-
 			$arrlength = count($carousel);
+
 			if(has_post_thumbnail() and $arrlength > 2):
 		?>
 				<?php for($x = 0; $x < $arrlength; $x++) {
