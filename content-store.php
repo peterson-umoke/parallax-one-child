@@ -85,10 +85,8 @@
 								</tr>
 								<tr>
 									<td> Availability</td>
-									<?php
-									$item['product_availability']	= get_field('availability') ? "<i class='fa fa-check-circle'></i> In Stock" : "<i class='fa fa-times-circle'></i>  Out Of Stock" ;
-	$item['product_availability_class']	= get_field('availability') ? "success" : "danger" ; ?>
-									<td> <div class="text-<?php echo $product_availability_class; ?> fade in"> <abbr title="<?php echo $product_availability; ?>"> <?php echo $product_availability; ?> </abbr> </div> </td>
+									
+									<td> <div class="text-<?php echo get_field('availability') ? "success" : "danger" ; ?>"> <abbr title="<?php the_title(); ?>"> <?php echo $availability = get_field('availability') ? "<i class='fa fa-check-circle'></i> In Stock" : "<i class='fa fa-times-circle'></i>  Out Of Stock" ; ?> </abbr> </div> </td>
 								</tr>
 								<tr>
 									<td colspan="2"> <a href="<?php the_permalink(); ?>" rel="<?php the_title(); ?>-product-link" title="<?php the_title_attribute(); ?>" class="btn btn-success" target="_blank"> More Details </a> </td>
